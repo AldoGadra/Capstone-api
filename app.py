@@ -97,7 +97,7 @@ def tes_return_json():
     return (df.to_json()) # mengembalikan dataframe dalam bentuk json
 
 
-
+#task endpoint
 @app.route('/get_entities', methods=['POST'])
 def get_entities():
     
@@ -119,11 +119,11 @@ def get_entities():
     return (df.to_json())
 
 
-
+#task bonus
 @app.route('/get_entities_normalized', methods=['POST'])
 def get_entities_normalizedfoo():
-    data = request.get_json() \
-    text = data['text'] # extract 'text' element 
+    data = request.get_json()
+    text = data['text']
     doc = nlp(text) #
     d = [(ent.label_, ent.text) for ent in doc.ents]
     df = pd.DataFrame(d, columns=['category', 'value'])
