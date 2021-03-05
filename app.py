@@ -83,7 +83,7 @@ def multi_method():
 
 @app.route('/tes_send_json', methods=['POST'])
 def tes_send_json():
-    data = request.get_json() # proses membaca json yang dikirim 
+    data = request.get_json()  
     nama = data['nama']
     usia = data['usia']
     pekerjaan = data['pekerjaan']
@@ -91,10 +91,10 @@ def tes_send_json():
 
 @app.route('/tes_return_json', methods=['POST'])
 def tes_return_json():
-    data = request.get_json() # proses membaca json yang dikirim 
-    df = pd.DataFrame([data]) # mengolah data menjadi dataframe
+    data = request.get_json() 
+    df = pd.DataFrame([data]) 
 
-    return (df.to_json()) # mengembalikan dataframe dalam bentuk json
+    return (df.to_json()) 
 
 
 #task endpoint
